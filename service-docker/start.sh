@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 
-echo "Starting... ⏳"
-echo ""
-echo "Hello World 👋"
+# Start the application
+npm start
