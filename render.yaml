@@ -1,0 +1,32 @@
+services:
+- type: worker
+  name: monorepo-test-service
+  branch: main
+  env: go
+  buildCommand: cd service && ./build.sh
+  startCommand: cd service && ./start.sh
+- type: worker
+  name: monorepo-test-service-docker
+  branch: main
+  env: docker
+  dockerfilePath: ./service-docker/Dockerfile
+  dockerContext: ./service-docker
+  dockerCommand: /bin/bash -c 'bash ./start.sh'
+- type: web
+  name: monorepo-test-static-site
+  branch: main
+  env: static
+  buildCommand: cd static-site && ./start.sh
+  staticPublishPath: ./static-site/
+- type: cron
+  name: monorepo-test-cron-job
+  env: go
+  startCommand: echo "Hello World"
+  schedule: "0 5 * * *"
+- type: cron
+  name: monorepo-test-cron-job-docker
+  env: docker
+  dockerfilePath: ./service-docker/Dockerfile
+  dockerContext: ./service-docker
+  dockerCommand: /bin/bash -c 'bash ./start.sh'
+  schedule: "0 5 * * *"
