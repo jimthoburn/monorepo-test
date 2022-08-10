@@ -10,8 +10,8 @@ services:
   branch: main
   env: docker
   dockerfilePath: ./service-docker/Dockerfile
-  dockerContext: ./service-docker
-  dockerCommand: bash /usr/src/app/start.sh
+  dockerContext: .
+  dockerCommand: bash ./service-docker/start.sh
 - type: web
   name: monorepo-test-static-site
   branch: main
@@ -27,6 +27,6 @@ services:
   name: monorepo-test-cron-job-docker
   env: docker
   dockerfilePath: ./cron-job-docker/Dockerfile
-  dockerContext: ./cron-job-docker
-  dockerCommand: bash /usr/src/app/start.sh
+  dockerContext: .
+  dockerCommand: bash ./cron-job-docker/start.sh
   schedule: "0 5 * * *"
