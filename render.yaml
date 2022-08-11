@@ -10,8 +10,8 @@ services:
   branch: main
   env: docker
   dockerfilePath: ./service-docker/Dockerfile
-  dockerContext: .
-  dockerCommand: bash ./service-docker/start.sh
+  dockerContext: ./service-docker/
+  dockerCommand: bash ./start.sh
   healthCheckPath: /health-check
 - type: web
   name: monorepo-test-static-site
