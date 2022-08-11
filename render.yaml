@@ -12,6 +12,7 @@ services:
   dockerfilePath: ./service-docker/Dockerfile
   dockerContext: .
   dockerCommand: bash ./service-docker/start.sh
+  healthCheckPath: /health-check
 - type: web
   name: monorepo-test-static-site
   branch: main
