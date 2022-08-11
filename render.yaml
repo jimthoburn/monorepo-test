@@ -22,7 +22,8 @@ services:
 - type: cron
   name: monorepo-test-cron-job
   env: go
-  startCommand: echo "Hello World 👋"
+  buildCommand: cd cron-job && ./build.sh
+  startCommand: cd cron-job && ./start.sh
   schedule: "0 5 * * *"
 - type: cron
   name: monorepo-test-cron-job-docker
