@@ -29,6 +29,6 @@ services:
   name: monorepo-test-cron-job-docker
   env: docker
   dockerfilePath: ./cron-job-docker/Dockerfile
-  dockerContext: .
-  dockerCommand: bash ./cron-job-docker/start.sh
+  dockerContext: ./cron-job-docker/
+  dockerCommand: bash ./start.sh
   schedule: "0 5 * * *"
