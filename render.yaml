@@ -2,7 +2,6 @@ previewsEnabled: true
 services:
 - type: web
   name: monorepo-test-service
-  branch: main
   env: node
   buildCommand: cd service && ./build.sh
   startCommand: cd service && ./start.sh
@@ -11,7 +10,6 @@ services:
     - service/**
 - type: web
   name: monorepo-test-service-docker
-  branch: main
   env: docker
   dockerfilePath: ./service-docker/Dockerfile
   dockerContext: ./service-docker/
@@ -22,7 +20,6 @@ services:
     - service-docker/**
 - type: web
   name: monorepo-test-static-site
-  branch: main
   env: static
   buildCommand: cd static-site && ./build.sh
   staticPublishPath: ./static-site/
