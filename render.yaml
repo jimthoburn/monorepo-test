@@ -1,34 +1,39 @@
+previewsEnabled: true
 services:
 - type: web
   name: monorepo-test-service
   branch: main
   env: node
-  buildCommand: cd service && ./build.sh
-  startCommand: cd service && ./start.sh
+  rootDir: service
+  buildCommand: ./build.sh
+  startCommand: ./start.sh
 - type: web
   name: monorepo-test-service-docker
   branch: main
   env: docker
-  dockerfilePath: ./service-docker/Dockerfile
-  dockerContext: ./service-docker/
+  rootDir: service-docker
+  dockerfilePath: ./Dockerfile
+  dockerContext: ./
   dockerCommand: bash ./start.sh
-  healthCheckPath: /health-check
 - type: web
   name: monorepo-test-static-site
   branch: main
   env: static
-  buildCommand: cd static-site && ./build.sh
-  staticPublishPath: ./static-site/
+  rootDir: static-site
+  buildCommand: ./build.sh
+  staticPublishPath: ./
 - type: cron
   name: monorepo-test-cron-job
   env: go
-  buildCommand: cd cron-job && ./build.sh
-  startCommand: cd cron-job && ./start.sh
+  rootDir: cron-job
+  buildCommand: ./build.sh
+  startCommand: ./start.sh
   schedule: "0 5 * * *"
 - type: cron
   name: monorepo-test-cron-job-docker
   env: docker
-  dockerfilePath: ./cron-job-docker/Dockerfile
-  dockerContext: ./cron-job-docker/
+  rootDir: cron-job-docker
+  dockerfilePath: ./Dockerfile
+  dockerContext: ./
   dockerCommand: bash ./start.sh
   schedule: "0 5 * * *"
