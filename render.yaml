@@ -1,3 +1,4 @@
+previewsEnabled: true
 services:
 - type: web
   name: monorepo-test-service
