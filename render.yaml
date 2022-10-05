@@ -29,6 +29,8 @@ services:
   buildFilter:
     paths:
     - static-site/**
+    ignoredPaths:
+    - "**/*.md"
 - type: cron
   name: monorepo-test-cron-job
   env: go
