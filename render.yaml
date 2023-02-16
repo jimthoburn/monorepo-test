@@ -3,7 +3,7 @@ services:
 - type: web
   name: monorepo-test-service
   branch: main
-  env: python
+  runtime: node
   buildCommand: cd service && ./build.sh
   startCommand: cd service && ./start.sh
   buildFilter:
@@ -33,7 +33,7 @@ services:
     - "**/*.md"
 - type: cron
   name: monorepo-test-cron-job
-  env: python
+  runtime: node
   buildCommand: cd cron-job && ./build.sh
   startCommand: cd cron-job && ./start.sh
   schedule: "0 5 * * *"
