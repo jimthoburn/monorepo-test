@@ -3,7 +3,7 @@ services:
 - type: web
   name: monorepo-test-service
   branch: main
-  env: node
+  env: ruby
   buildCommand: cd service && ./build.sh
   startCommand: cd service && ./start.sh
   buildFilter:
