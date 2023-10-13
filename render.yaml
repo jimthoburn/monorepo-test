@@ -1,52 +1,152 @@
 previewsEnabled: false
 services:
 - type: web
-  name: monorepo-test-service
+  name: monorepo-test-service-a
   branch: main
   env: node
   buildCommand: cd service && ./build.sh
   startCommand: cd service && ./start.sh
+  preDeployCommand: sleep 850
   buildFilter:
     paths:
     - service/**
 - type: web
-  name: monorepo-test-service-docker
+  name: monorepo-test-service-b
   branch: main
-  env: docker
-  dockerfilePath: ./service-docker/Dockerfile
-  dockerContext: ./service-docker/
-  dockerCommand: bash ./start.sh
-  healthCheckPath: /health-check
+  env: node
+  buildCommand: cd service && ./build.sh
+  startCommand: cd service && ./start.sh
+  preDeployCommand: sleep 850
   buildFilter:
     paths:
-    - service-docker/**
+    - service/**
 - type: web
-  name: monorepo-test-static-site
+  name: monorepo-test-service-c
   branch: main
-  env: static
-  buildCommand: cd static-site && ./build.sh
-  staticPublishPath: ./static-site/
+  env: node
+  buildCommand: cd service && ./build.sh
+  startCommand: cd service && ./start.sh
+  preDeployCommand: sleep 850
   buildFilter:
     paths:
-    - static-site/**
-    ignoredPaths:
-    - "**/*.md"
-- type: cron
-  name: monorepo-test-cron-job
-  env: go
-  buildCommand: cd cron-job && ./build.sh
-  startCommand: cd cron-job && ./start.sh
-  schedule: "0 5 * * *"
+    - service/**
+- type: web
+  name: monorepo-test-service-d
+  branch: main
+  env: node
+  buildCommand: cd service && ./build.sh
+  startCommand: cd service && ./start.sh
+  preDeployCommand: sleep 850
   buildFilter:
     paths:
-    - cron-job/**
-- type: cron
-  name: monorepo-test-cron-job-docker
-  env: docker
-  dockerfilePath: ./cron-job-docker/Dockerfile
-  dockerContext: ./cron-job-docker/
-  dockerCommand: bash ./start.sh
-  schedule: "0 5 * * *"
+    - service/**
+- type: web
+  name: monorepo-test-service-e
+  branch: main
+  env: node
+  buildCommand: cd service && ./build.sh
+  startCommand: cd service && ./start.sh
+  preDeployCommand: sleep 850
   buildFilter:
     paths:
-    - cron-job-docker/**
+    - service/**
+- type: web
+  name: monorepo-test-service-f
+  branch: main
+  env: node
+  buildCommand: cd service && ./build.sh
+  startCommand: cd service && ./start.sh
+  preDeployCommand: sleep 850
+  buildFilter:
+    paths:
+    - service/**
+- type: web
+  name: monorepo-test-service-g
+  branch: main
+  env: node
+  buildCommand: cd service && ./build.sh
+  startCommand: cd service && ./start.sh
+  preDeployCommand: sleep 850
+  buildFilter:
+    paths:
+    - service/**
+- type: web
+  name: monorepo-test-service-h
+  branch: main
+  env: node
+  buildCommand: cd service && ./build.sh
+  startCommand: cd service && ./start.sh
+  preDeployCommand: sleep 850
+  buildFilter:
+    paths:
+    - service/**
+- type: web
+  name: monorepo-test-service-i
+  branch: main
+  env: node
+  buildCommand: cd service && ./build.sh
+  startCommand: cd service && ./start.sh
+  preDeployCommand: sleep 850
+  buildFilter:
+    paths:
+    - service/**
+- type: web
+  name: monorepo-test-service-j
+  branch: main
+  env: node
+  buildCommand: cd service && ./build.sh
+  startCommand: cd service && ./start.sh
+  preDeployCommand: sleep 850
+  buildFilter:
+    paths:
+    - service/**
+- type: web
+  name: monorepo-test-service-k
+  branch: main
+  env: node
+  buildCommand: cd service && ./build.sh
+  startCommand: cd service && ./start.sh
+  preDeployCommand: sleep 850
+  buildFilter:
+    paths:
+    - service/**
+- type: web
+  name: monorepo-test-service-l
+  branch: main
+  env: node
+  buildCommand: cd service && ./build.sh
+  startCommand: cd service && ./start.sh
+  preDeployCommand: sleep 850
+  buildFilter:
+    paths:
+    - service/**
+- type: web
+  name: monorepo-test-service-m
+  branch: main
+  env: node
+  buildCommand: cd service && ./build.sh
+  startCommand: cd service && ./start.sh
+  preDeployCommand: sleep 850
+  buildFilter:
+    paths:
+    - service/**
+- type: web
+  name: monorepo-test-service-n
+  branch: main
+  env: node
+  buildCommand: cd service && ./build.sh
+  startCommand: cd service && ./start.sh
+  preDeployCommand: sleep 850
+  buildFilter:
+    paths:
+    - service/**
+- type: web
+  name: monorepo-test-service-o
+  branch: main
+  env: node
+  buildCommand: cd service && ./build.sh
+  startCommand: cd service && ./start.sh
+  preDeployCommand: sleep 850
+  buildFilter:
+    paths:
+    - service/**
