@@ -45,7 +45,7 @@ services:
   env: docker
   dockerfilePath: ./cron-job-docker/Dockerfile
   dockerContext: ./cron-job-docker/
-  dockerCommand: bash ./start.sh
+  dockerCommand: echo 'hello world'
   schedule: "0 5 * * *"
   buildFilter:
     paths:
