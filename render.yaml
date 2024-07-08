@@ -1,4 +1,4 @@
-previewsEnabled: false
+previewsEnabled: true
 services:
 - type: web
   name: monorepo-test-service
@@ -9,6 +9,7 @@ services:
   buildFilter:
     paths:
     - service/**
+  numInstances: 2
 - type: web
   name: monorepo-test-service-docker
   branch: main
@@ -20,6 +21,11 @@ services:
   buildFilter:
     paths:
     - service-docker/**
+  scaling:
+    minInstances: 1         # Required
+    maxInstances: 3         # Required
+    targetMemoryPercent: 60 # Optional if targetCPUPercent is set (valid: 1-90)
+    targetCPUPercent: 60    # Optional if targetMemory is set (valid: 1-90)
 - type: web
   name: monorepo-test-static-site
   branch: main
