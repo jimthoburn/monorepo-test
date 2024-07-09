@@ -57,7 +57,7 @@ services:
   buildFilter:
     paths:
     - cron-job-docker/**
-- type: private
+- type: pserv
   name: monorepo-test-service-image
   image:
     url: docker.io/library/mysql:latest
