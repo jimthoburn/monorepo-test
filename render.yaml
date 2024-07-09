@@ -65,7 +65,7 @@ services:
   disk:
     name: disk
     mountPath: /var/lib/mysql
-    sizeGB: 1
+    sizeGB: 10
   envVars:
     - key: MYSQL_DATABASE
       sync: false
