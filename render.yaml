@@ -11,9 +11,6 @@ services:
     - service/**
   pullRequestPreviewsEnabled: true # Enable service previews
   numInstances: 2
-  envVars:
-    - key: example_secret
-      sync: false
 - type: web
   name: monorepo-test-service-docker
   branch: main
@@ -60,6 +57,19 @@ services:
   buildFilter:
     paths:
     - cron-job-docker/**
+- type: private
+  name: monorepo-test-service-image
+  image:
+    url: docker.io/library/mysql:latest
+  envVars:
+    - key: MYSQL_DATABASE
+      sync: false
+    - key: MYSQL_PASSWORD
+      sync: false
+    - key: MYSQL_ROOT_PASSWORD
+      sync: false
+    - key: MYSQL_USER
+      sync: false
 # A Redis instance 
 - type: redis
   name: monorepo-test-redis
