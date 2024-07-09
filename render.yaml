@@ -1,4 +1,4 @@
-previewsEnabled: true
+previewsEnabled: true # Enable preview environments
 services:
 - type: web
   name: monorepo-test-service
@@ -9,6 +9,7 @@ services:
   buildFilter:
     paths:
     - service/**
+  pullRequestPreviewsEnabled: true # Enable service previews
   numInstances: 2
   envVars:
     - key: example_secret
