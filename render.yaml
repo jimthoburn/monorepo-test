@@ -10,6 +10,9 @@ services:
     paths:
     - service/**
   numInstances: 2
+  envVars:
+    - key: example_secret
+      sync: false
 - type: web
   name: monorepo-test-service-docker
   branch: main
