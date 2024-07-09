@@ -59,6 +59,7 @@ services:
     - cron-job-docker/**
 - type: pserv
   name: monorepo-test-service-image
+  env: image
   image:
     url: docker.io/library/mysql:latest
   envVars:
