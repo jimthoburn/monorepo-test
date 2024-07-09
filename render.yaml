@@ -62,6 +62,10 @@ services:
   env: image
   image:
     url: docker.io/library/mysql:latest
+  disk:
+    name: disk
+    mountPath: /var/lib/mysql
+    sizeGB: 1
   envVars:
     - key: MYSQL_DATABASE
       sync: false
