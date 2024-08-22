@@ -67,6 +67,10 @@ services:
     mountPath: /var/lib/mysql
     sizeGB: 45
   envVars:
+    - key: ENV_VAR_WITH_VALUE
+      value: env-var-value
+    - key: ENV_VAR_WITH_EMPTY_VALUE
+      value:
     - key: MYSQL_DATABASE
       sync: false
     - key: MYSQL_PASSWORD
