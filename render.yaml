@@ -1,26 +1,6 @@
 previewsEnabled: false
 services:
 - type: web
-  name: monorepo-test-service
-  branch: main
-  env: node
-  buildCommand: cd service && ./build.sh
-  startCommand: cd service && ./start.sh
-  buildFilter:
-    paths:
-    - service/**
-- type: web
-  name: monorepo-test-service-docker
-  branch: main
-  env: docker
-  dockerfilePath: ./service-docker/Dockerfile
-  dockerContext: ./service-docker/
-  dockerCommand: bash ./start.sh
-  healthCheckPath: /health-check
-  buildFilter:
-    paths:
-    - service-docker/**
-- type: web
   name: monorepo-test-static-site
   branch: main
   env: static
@@ -31,22 +11,3 @@ services:
     - static-site/**
     ignoredPaths:
     - "**/*.md"
-- type: cron
-  name: monorepo-test-cron-job
-  env: go
-  buildCommand: cd cron-job && ./build.sh
-  startCommand: cd cron-job && ./start.sh
-  schedule: "0 5 * * *"
-  buildFilter:
-    paths:
-    - cron-job/**
-- type: cron
-  name: monorepo-test-cron-job-docker
-  env: docker
-  dockerfilePath: ./cron-job-docker/Dockerfile
-  dockerContext: ./cron-job-docker/
-  dockerCommand: bash ./start.sh
-  schedule: "0 5 * * *"
-  buildFilter:
-    paths:
-    - cron-job-docker/**
