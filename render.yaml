@@ -83,13 +83,13 @@ databases:
   # A Pro database instance with a read replica
   - name: monorepo-test-postgresql # Required
     ipAllowList: [] # Only allow internal connections
-    plan: pro # Default: starter
+    plan: pro-16gb # Default: starter
     readReplicas: # Default: does not add a read replica
       - name: monorepo-test-postgresql-replica
 
   # A Pro database that enables high availability
   - name: monorepo-test-postgresql-highly-available
     ipAllowList: [] # Only allow internal connections
-    plan: pro
+    plan: pro-16gb
     highAvailability:
       enabled: true
