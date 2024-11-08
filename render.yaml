@@ -1,4 +1,5 @@
-previewsEnabled: true # Enable preview environments
+previews:
+  generation: automatic
 services:
 - type: web
   name: monorepo-test-service
