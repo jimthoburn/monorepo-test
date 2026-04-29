@@ -17,6 +17,10 @@ app.get('/health-check', (req, res) => {
   res.send('Server is healthy');
 });
 
+if (Math.random() < 0.5) {
+  throw new Error('Simulated startup failure');
+}
+
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
 
