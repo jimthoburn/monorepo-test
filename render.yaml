@@ -50,3 +50,10 @@ services:
   buildFilter:
     paths:
     - cron-job-docker/**
+envVarGroups:
+  - name: monorepo-test-environment-group
+    envVars:
+      - key: VAR_A
+        value: value_a
+      - key: VAR_B
+        value: value_b
